@@ -1,0 +1,13 @@
+.partner {
+    border: 1px solid #e6e6e6;
+    border-bottom: 2px solid #b9babc;
+    border-radius: 2px;
+    transition: all 100ms ease-out;
+    opacity: .6;
+}
+
+.partner:hover {
+    box-shadow: 0 6px 9px rgb(0 0 0 / 10%);
+    border-bottom: 2px solid #4ab9cf;
+    opacity: 1;
+}

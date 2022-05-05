@@ -1,10 +1,11 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import './Contact.css';
 
 const Contact = () => {
     return (
         <div id='contact' className='py-5 bg-light'>
-            <h1 className='text-center'>Contact Us</h1>
+            <h1 className='text-center mb-4 text-dark'>Contact Us</h1>
             <Form className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Your Name</Form.Label>
