@@ -19,7 +19,7 @@ const Contact = () => {
                     <Form.Label>Message</Form.Label>
                     <Form.Control as="textarea" rows={5} placeholder="your message" required />
                 </Form.Group>
-                <input style={{ border: '1px solid #ced4da' }} className='w-100 p-2 btn btn-dark' type="button" value="Submit" />
+                <input style={{ border: '1px solid #ced4da' }} className='w-100 p-2 btn btn-dark' type="submit" value="Submit" />
             </Form>
         </div>
     );

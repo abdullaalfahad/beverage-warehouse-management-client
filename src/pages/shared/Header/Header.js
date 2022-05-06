@@ -17,6 +17,7 @@ const Header = () => {
                         >
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             <NavDropdown title="Link" id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
