@@ -1,35 +1,39 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-const Login = () => {
+const Register = () => {
     const navigate = useNavigate();
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     if (user) {
         navigate('/home');
     }
 
-    const handleLoginIn = event => {
+    const handleSignUp = event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password);
         event.target.reset();
     }
 
     return (
         <div className='py-5 w-50 mx-auto'>
-            <h1 className='mb-3 text-center'>Please Login</h1>
-            <Form onSubmit={handleLoginIn} className=''>
+            <h1 className='mb-3 text-center'>Register Here</h1>
+            <Form onSubmit={handleSignUp} className=''>
+                <Form.Group className="mb-3" controlId="formGroupName">
+                    <Form.Label>Your Name</Form.Label>
+                    <Form.Control type="text" name='name' placeholder="Enter name" required />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
@@ -38,9 +42,9 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Login" />
+                <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Register" />
             </Form>
-            <p className='my-3'>New in Beverage? <Link to='/register'>Create a account</Link></p>
+            <p className='my-3'>Already have an account? <Link to='/login'>Please login</Link></p>
             <div className=''>
                 <SocialLogin></SocialLogin>
             </div>
@@ -48,4 +52,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -21,15 +21,14 @@ const Blogs = () => {
             </div>
             <div className='blog p-4 mb-4'>
                 <h5>Q3: Differences between SQL and noSQL databases.</h5>
-                <p>Answer: The five critical differences between SQL vs NoSQL are:
-                    <ul>
-                        <li>SQL databases are relational, NoSQL databases are non-relational.</li>
-                        <li>SQL databases use structured query language and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.</li>
-                        <li>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable</li>
-                        <li>SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.</li>
-                        <li>SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</li>
-                    </ul>
-                </p>
+                <p>Answer: The five critical differences between SQL vs NoSQL are:</p>
+                <ul>
+                    <li>SQL databases are relational, NoSQL databases are non-relational.</li>
+                    <li>SQL databases use structured query language and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.</li>
+                    <li>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable</li>
+                    <li>SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.</li>
+                    <li>SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</li>
+                </ul>
             </div>
             <div className='blog p-4 mb-4'>
                 <h5>Q4: What is the purpose of jwt and how does it work?</h5>
@@ -48,8 +47,6 @@ const Blogs = () => {
 
                     The payload contains the claims. This is displayed as a JSON string, usually containing no more than a dozen fields to keep the JWT compact. This information is typically used by the server to verify that the user has permission to perform the action they are requesting. There are no mandatory claims for a JWT, but overlaying standards may make claims mandatory. For example, when using JWT as bearer access token under OAuth2.0, iss, sub, aud, and exp must be present. some are more common than others.
                     The signature ensures that the token hasn't been altered. The party that creates the JWT signs the header and payload with a secret that is known to both the issuer and receiver, or with a private key known only to the sender. When the token is used, the receiving party verifies that the header and payload match the signature.
-
-
                 </p>
             </div>
         </div>
