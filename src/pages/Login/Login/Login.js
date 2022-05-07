@@ -1,12 +1,17 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -14,8 +19,18 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    let errorElement;
+
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
+    }
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     const handleLoginIn = event => {
@@ -38,6 +53,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
+                {errorElement}
                 <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Login" />
             </Form>
             <p className='my-3'>New in Beverage? <Link to='/register'>Create a account</Link></p>

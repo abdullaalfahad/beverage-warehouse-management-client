@@ -11,11 +11,12 @@ const Header = () => {
     const handleSignOut = () => {
         signOut(auth);
     }
+
     return (
         <div>
             <Navbar bg="white" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#">BEVERAGE</Navbar.Brand>
+                    <Navbar.Brand href="/">BEVERAGE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav

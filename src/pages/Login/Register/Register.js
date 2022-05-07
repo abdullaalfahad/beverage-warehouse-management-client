@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../shared/Loading/Loading';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -14,8 +15,18 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    let errorElement;
+
     if (user) {
         navigate('/home');
+    }
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     const handleSignUp = event => {
@@ -42,6 +53,7 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
+                {errorElement}
                 <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Register" />
             </Form>
             <p className='my-3'>Already have an account? <Link to='/login'>Please login</Link></p>
