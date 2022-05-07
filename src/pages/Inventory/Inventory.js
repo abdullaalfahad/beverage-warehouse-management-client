@@ -11,7 +11,7 @@ const Inventory = () => {
             <h1 className='text-center mb-4 text-dark'>Inventory</h1>
             <Row lg={3} md={2} className="g-4">
                 {
-                    inventories.map(inventory => <InventoryDetails key={inventory._id} inventory={inventory}></InventoryDetails>)
+                    inventories.slice(0, 6).map(inventory => <InventoryDetails key={inventory._id} inventory={inventory}></InventoryDetails>)
                 }
             </Row>
             <div className='mt-4 text-center'>
