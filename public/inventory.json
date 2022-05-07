@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Speed",
+        "img": "https://www.shodagor.com/wp-content/uploads/2020/07/Speed-Energy-Drink-250-ml-Bottle.png",
+        "description": "Speed is one of the leading Energy Drink brands in Bangladesh, now available in Malaysia. SPEED provides the human body with the fuel it needs to keep up with the SPEED of everyday life. Each drink contains a potent energy blend of B-vitamins, caffeine, taurine and ginseng.",
+        "price": "25",
+        "quantity": "20",
+        "supplier": "Akiz Beverage"
+    },
+    {
+        "name": "Mojo",
+        "img": "https://www.okpapa.com.bd/wp-content/uploads/2020/04/MOJO-250ML.jpg",
+        "description": "Authentically fermented, thriving with living probiotic cultures and always chilled; MOJO is brewed with a unique culture, thoughtfully sourced organic ingredients and no shortcuts. Spiked with real fruit and spices, we keep things stevia-free, just as we think kombucha should be.",
+        "price": "16",
+        "quantity": "20",
+        "supplier": "Akiz Beverage"
+    },
+    {
+        "name": "Clemon",
+        "img": "https://i0.wp.com/shopmargin.com/wp-content/uploads/2021/04/1616912678_Clemon20Soft20Drinks2025020ml.jpg?fit=400%2C400&ssl=1",
+        "description": "Lemon-lime drinks, also known colloquially as lemonade in the United Kingdom, Australia and New Zealand and as cider in Japan and Korea, are carbonated soft drinks with lemon and lime flavoring. Popular brands include Sprite, 7 Up, and Sierra Mist.",
+        "price": "16",
+        "quantity": "20",
+        "supplier": "Akiz Beverage"
+    },
+    {
+        "name": "Spa",
+        "img": "https://societydeal24.com/wp-content/uploads/2021/08/SPA-1000-ML.jpg",
+        "description": "Spa water is a fruit infused refreshing drink. Less sweet and sugary than a soda. Filled with natural fruit and/or vegetables giving just a hint of flavor to the infusion water. Add fresh fruit, vegetables and herbs for spa water.",
+        "price": "15",
+        "quantity": "20",
+        "supplier": "Akiz Beverage"
+    },
+    {
+        "name": "Frutika",
+        "img": "https://groneeds.com/wp-content/uploads/2020/06/frutika-mango-juice-1-ltr-1.jpg",
+        "description": "Frutikadrinks, also known colloquially as mangoda in the United Kingdom, Australia and New Zealand and as cider in Japan and Korea, are carbonated soft drinks with lemon and lime flavoring. Popular brands include Sprite, 7 Up, and Sierra Mist.",
+        "price": "45",
+        "quantity": "20",
+        "supplier": "Akiz Beverage"
+    },
+    {
+        "name": "Fanta",
+        "img": "https://www.bigbasket.com/media/uploads/p/xxl/251041-2_6-fanta-soft-drink-orange-flavoured.jpg",
+        "description": "Fanta is a brand of fruit-flavored carbonated soft drinks created by Coca-Cola Deutschland under the leadership of German businessman Max Keith. There are more than 200 flavors worldwide. Fanta originated in Germany as a Coca-Cola substitute in 1940 due to the American trade embargo of Nazi Germany which affected the availability of Coca-Cola ingredients.",
+        "price": "40",
+        "quantity": "20",
+        "supplier": "Coca cola"
+    }
+]
