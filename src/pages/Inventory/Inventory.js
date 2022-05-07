@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
 import InventoryDetails from '../InventoryDetails/InventoryDetails';
 
@@ -14,7 +15,7 @@ const Inventory = () => {
                 }
             </Row>
             <div className='mt-4 text-center'>
-                <button className='btn btn-outline-dark'>Manage Inventory</button>
+                <Link className='btn btn-dark' to="/manage-items">Manage Inventory</Link>
             </div>
         </div>
     );
