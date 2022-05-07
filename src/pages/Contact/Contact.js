@@ -12,7 +12,7 @@ const Contact = () => {
             message: event.target.message.value
         }
         fetch('http://localhost:5000/contact', {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -20,9 +20,8 @@ const Contact = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
                 if (data.insertedId) {
-                    toast('success');
+                    toast('Message Successfully Sent');
                     event.target.reset();
                 }
             })

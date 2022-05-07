@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
 
 const ManageInventory = () => {
@@ -12,7 +13,7 @@ const ManageInventory = () => {
                 </div>)
             }
             <div className='text-center mt-4'>
-                <button className='btn btn-dark'>Add New Item</button>
+                <Link to="/add-item" className='btn btn-dark'>Add New Item</Link>
             </div>
         </div>
     );
