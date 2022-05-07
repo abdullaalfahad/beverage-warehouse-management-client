@@ -6,6 +6,9 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -17,8 +20,10 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
