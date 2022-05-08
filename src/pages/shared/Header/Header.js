@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar bg="white" expand="lg">
+            <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="/">BEVERAGE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,20 +27,14 @@ const Header = () => {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                             {
-                                user ? <button className='btn btn-dark' onClick={handleSignOut}>Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                user && <>
+                                    <Nav.Link as={Link} to="/manage-items">Manage Items</Nav.Link>
+                                    <Nav.Link as={Link} to="/add-item">Add Item</Nav.Link>
+                                </>
                             }
-
-                            <NavDropdown title="Link" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Something else here
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            <Nav.Link href="#" disabled>
-                                Link
-                            </Nav.Link>
+                            {
+                                user ? <button className='btn btn-dark ms-2' onClick={handleSignOut}>Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
