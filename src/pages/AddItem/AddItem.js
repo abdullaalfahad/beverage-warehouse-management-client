@@ -1,11 +1,16 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
     const handleAddItem = event => {
         event.preventDefault();
         const newItem = {
+            email: user.email,
             name: event.target.name.value,
             img: event.target.img.value,
             description: event.target.description.value,

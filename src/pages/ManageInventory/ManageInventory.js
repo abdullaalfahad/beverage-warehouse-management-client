@@ -1,9 +1,11 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useInventory from '../../hooks/useInventory';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
+    const navigate = useNavigate();
     const [inventories, setInventories] = useInventory();
     const handleDeleteItem = id => {
         const proceed = window.confirm('Are you sure');
@@ -22,7 +24,7 @@ const ManageInventory = () => {
 
     return (
         <div className='container my-5'>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -42,7 +44,8 @@ const ManageInventory = () => {
                                 <td>{inventory.quantity}</td>
                                 <td>{inventory.price * inventory.quantity}</td>
                                 <td>{inventory.supplier}</td>
-                                <td><button onClick={() => handleDeleteItem(inventory._id)} className='btn btn-danger ms-2'>Delete</button></td>
+                                <td><button className='btn btn-dark' onClick={() => navigate(`/inventory/${inventory._id}`)}>Update</button>
+                                    <button onClick={() => handleDeleteItem(inventory._id)} className='btn btn-danger ms-2'>Delete</button></td>
                             </tr>
                         </tbody>
                     )
