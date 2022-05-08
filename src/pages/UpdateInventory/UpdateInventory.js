@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const UpdateInventory = () => {
     const { id } = useParams();
@@ -80,6 +80,9 @@ const UpdateInventory = () => {
                     </div>
                 </Col>
             </Row>
+            <div className='mt-4 text-center'>
+                <Link className='btn btn-dark' to="/manage-items">Manage Inventory</Link>
+            </div>
         </div>
     );
 };

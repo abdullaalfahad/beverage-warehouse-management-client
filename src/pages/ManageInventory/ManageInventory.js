@@ -5,8 +5,8 @@ import useInventory from '../../hooks/useInventory';
 import './ManageInventory.css'
 
 const ManageInventory = () => {
-    const navigate = useNavigate();
     const [inventories, setInventories] = useInventory();
+    const navigate = useNavigate();
     const handleDeleteItem = id => {
         const proceed = window.confirm('Are you sure');
         if (proceed) {
@@ -24,6 +24,7 @@ const ManageInventory = () => {
 
     return (
         <div className='container my-5'>
+            <h1 className='text-center mb-4'>Manage Items</h1>
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>
