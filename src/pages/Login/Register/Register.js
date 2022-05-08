@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../shared/Loading/Loading';
+import './Register.css'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -38,9 +39,9 @@ const Register = () => {
     }
 
     return (
-        <div className='py-5 w-50 mx-auto'>
+        <div className='py-5 register'>
             <h1 className='mb-3 text-center'>Register Here</h1>
-            <Form onSubmit={handleSignUp} className=''>
+            <Form onSubmit={handleSignUp} className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formGroupName">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter name" required />
@@ -56,9 +57,13 @@ const Register = () => {
                 {errorElement}
                 <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Register" />
             </Form>
-            <p className='my-3'>Already have an account? <Link to='/login'>Please login</Link></p>
-            <div className=''>
-                <SocialLogin></SocialLogin>
+            <div className='others'>
+                <div className='w-50 mx-auto'>
+                    <p className='my-3'>Already have an account? <Link to='/login'>Please login</Link></p>
+                    <div className=''>
+                        <SocialLogin></SocialLogin>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 @media (max-width: 767.98px) {
 
-    .login Form,
+    .register Form,
     .others div {
         width: 90% !important;
         margin: 0 auto;
@@ -9,18 +9,9 @@
 
 @media (max-width: 990.98px) {
 
-    .login Form,
+    .register Form,
     .others div {
         width: 90% !important;
         margin: 0 auto;
     }
-}
-
-.reset-btn {
-    margin-left: -12px;
-    margin-top: -5px;
-}
-
-.reset-btn:focus {
-    box-shadow: none !important;
 }

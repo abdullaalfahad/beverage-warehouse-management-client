@@ -4,6 +4,7 @@ import auth from '../../../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../shared/Loading/Loading';
 import useToken from '../../../hooks/useToken';
+import './SocialLogin.css'
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -38,7 +39,7 @@ const SocialLogin = () => {
             <div>
                 <button
                     onClick={() => signInWithGoogle()}
-                    className='btn btn-dark w-50 d-block mx-auto my-2'>
+                    className='btn btn-dark w-50 d-block mx-auto my-2 social-sign'>
                     Google Sign In
                 </button>
             </div>

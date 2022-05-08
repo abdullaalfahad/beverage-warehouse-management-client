@@ -57,9 +57,9 @@ const Login = () => {
         }
     }
     return (
-        <div className='py-5 w-50 mx-auto'>
+        <div className='py-5 login'>
             <h1 className='mb-3 text-center'>Please Login</h1>
-            <Form onSubmit={handleLoginIn} className=''>
+            <Form onSubmit={handleLoginIn} className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" ref={emailRef} name='email' placeholder="Enter email" required />
@@ -71,9 +71,13 @@ const Login = () => {
                 {errorElement}
                 <input style={{ border: '1px solid #ced4da', width: '25%' }} className='p-2 btn btn-dark' type="submit" value="Login" />
             </Form>
-            <p className='my-3'>New in Beverage? <Link to='/register'>Create a account</Link></p>
-            <p className='my-3'>Forget Password? <Button className='reset-btn' variant="link" onClick={resetPassword}>Reset password</Button></p>
-            <SocialLogin></SocialLogin>
+            <div className='others'>
+                <div className='w-50 mx-auto'>
+                    <p className='my-3'>New in Beverage? <Link to='/register'>Create a account</Link></p>
+                    <p className='my-3'>Forget Password? <Button className='reset-btn' variant="link" onClick={resetPassword}>Reset password</Button></p>
+                    <SocialLogin></SocialLogin>
+                </div>
+            </div>
         </div>
     );
 };
