@@ -1,8 +1,22 @@
-# Getting Started with Create React App
+# Warehouse Management Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project live site link: [Click Here](https://warehouse-management-7d323.web.app/).
 
-## Available Scripts
+## Used in this website
+* React.js
+* React Router
+* React Bootstrap
+* Firebase
+* Express.js
+* MongoDB
+
+## Features in this website
+* User can login and register using email & password also with Google SignIn.
+* Only logged in user can update items, add items, delete items.
+* Logged in user can see his/her items.
+* There are a home page where have a navbar, banner, inventory items, partners section, contact us, footer. Navbar & footer are the common in every page.
+* There have a blogs page where have some question answer
+* Also have a 404 not found pages.  
 
 In the project directory, you can run:
 
