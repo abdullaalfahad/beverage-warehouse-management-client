@@ -4,6 +4,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 import Loading from '../../shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
@@ -13,9 +14,6 @@ const Login = () => {
     let location = useLocation();
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
-    let from = location.state?.from?.pathname || "/";
-
     const [
         signInWithEmailAndPassword,
         user,
@@ -23,12 +21,9 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
+    const [token] = useToken(user);
     let errorElement;
-
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    let from = location.state?.from?.pathname || "/";
 
     if (loading || sending) {
         return <Loading></Loading>
@@ -38,12 +33,17 @@ const Login = () => {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
+    if (token) {
+        // navigate(from, { replace: true });
+    }
+
     const handleLoginIn = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
         event.target.reset();
+        navigate(from, { replace: true });
     }
 
     const resetPassword = async (event) => {

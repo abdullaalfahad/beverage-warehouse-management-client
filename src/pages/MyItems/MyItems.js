@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -10,10 +12,25 @@ const MyItems = () => {
 
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch(`https://blooming-mountain-98780.herokuapp.com/my-items?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, []);
+        const getItems = async () => {
+            const url = `https://blooming-mountain-98780.herokuapp.com/my-items?email=${user.email}`;
+            try {
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
+                setItems(data);
+            }
+            catch (error) {
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth);
+                    navigate('/login');
+                }
+            }
+        }
+        getItems();
+    }, [user])
 
     const handleDeleteItem = id => {
         const proceed = window.confirm('Are you sure');
