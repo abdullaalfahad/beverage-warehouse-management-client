@@ -6,7 +6,7 @@ const UpdateInventory = () => {
     const { id } = useParams();
     const [inventory, setInventory] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://blooming-mountain-98780.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setInventory(data))
     }, []);
@@ -20,7 +20,7 @@ const UpdateInventory = () => {
             let newInventory = { quantity: newQuantity, ...rest };
             setInventory(newInventory);
 
-            fetch(`http://localhost:5000/inventory/${id}`, {
+            fetch(`https://blooming-mountain-98780.herokuapp.com/inventory/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const UpdateInventory = () => {
             let newInventory = { quantity: newQuantity, ...rest };
             setInventory(newInventory);
 
-            fetch(`http://localhost:5000/inventory/${id}`, {
+            fetch(`https://blooming-mountain-98780.herokuapp.com/inventory/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const Contact = () => {
             email: event.target.email.value,
             message: event.target.message.value
         }
-        fetch('http://localhost:5000/contact', {
+        fetch('https://blooming-mountain-98780.herokuapp.com/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,9 +27,9 @@ const Contact = () => {
             })
     }
     return (
-        <div id='contact' className='py-5 bg-light'>
+        <div id='contact' className='py-5'>
             <h1 className='text-center mb-4 text-dark'>Contact Us</h1>
-            <Form className='w-50 mx-auto' onSubmit={handleSubmit}>
+            <Form className='w-75 mx-auto' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="your name" required />

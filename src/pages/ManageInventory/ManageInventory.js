@@ -10,7 +10,7 @@ const ManageInventory = () => {
     const handleDeleteItem = id => {
         const proceed = window.confirm('Are you sure');
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://blooming-mountain-98780.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

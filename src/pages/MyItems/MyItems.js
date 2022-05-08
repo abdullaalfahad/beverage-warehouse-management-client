@@ -6,7 +6,7 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/my-items?email=${user.email}`)
+        fetch(`https://blooming-mountain-98780.herokuapp.com/my-items?email=${user.email}`)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

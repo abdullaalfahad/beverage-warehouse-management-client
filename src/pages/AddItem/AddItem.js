@@ -1,4 +1,4 @@
-import userEvent from '@testing-library/user-event';
+import './AddItem.css';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -18,7 +18,7 @@ const AddItem = () => {
             quantity: event.target.quantity.value,
             supplier: event.target.supplierName.value
         }
-        fetch('http://localhost:5000/inventory', {
+        fetch('https://blooming-mountain-98780.herokuapp.com/inventory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const AddItem = () => {
             })
     }
     return (
-        <div className='w-50 mx-auto my-5'>
+        <div className='w-50 mx-auto my-5 add-item'>
             <h1 className='text-center mb-4'>Add New Item</h1>
             <Form onSubmit={handleAddItem}>
                 <Form.Group className="mb-3" controlId="formGroupName">
